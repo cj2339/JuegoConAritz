@@ -57,6 +57,7 @@ public class VentanaInicio extends JFrame implements ActionListener {
         btnSalir.addActionListener(this);
         contentPane.add(btnSalir);
     }
+    
 
     public void actionPerformed(ActionEvent e) {
         Object o = e.getSource();
