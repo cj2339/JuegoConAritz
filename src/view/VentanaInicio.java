@@ -12,39 +12,35 @@ public class VentanaInicio extends JFrame {
         EventQueue.invokeLater(() -> new VentanaInicio());
     }
 
-    public VentanaInicio() {
-        setTitle("Bienvenido al Test de Fútbol");
-        setSize(350, 200);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(3, 1));
+        public VentanaInicio() {
 
-        JLabel lbl = new JLabel("Introduce tu nombre o nick:", SwingConstants.CENTER);
-        add(lbl);
+            setTitle("Bienvenido al Test de Fútbol");
+            setSize(350, 200);
+            setLocationRelativeTo(null);
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        txtNombre = new JTextField();
-        add(txtNombre);
+            // Imagen de fondo
+            JLabel fondo = new JLabel(new ImageIcon("ruta/miFondo.jpg"));
+            setContentPane(fondo);
+            fondo.setLayout(new GridLayout(3, 1)); // Mantienes tu layout
 
-        JPanel panelBotones = new JPanel();
-        JButton btnSiguiente = new JButton("Siguiente");
-        JButton btnSalir = new JButton("Salir");
+            JLabel lbl = new JLabel("Introduce tu nombre o nick:", SwingConstants.CENTER);
+            lbl.setForeground(Color.WHITE); // Para que se vea sobre la imagen
+            fondo.add(lbl);
 
-        panelBotones.add(btnSiguiente);
-        panelBotones.add(btnSalir);
-        add(panelBotones);
+            txtNombre = new JTextField();
+            fondo.add(txtNombre);
 
-        btnSalir.addActionListener(e -> System.exit(0));
+            JPanel panelBotones = new JPanel();
+            panelBotones.setOpaque(false); // Para que no tape el fondo
+            JButton btnSiguiente = new JButton("Siguiente");
+            JButton btnSalir = new JButton("Salir");
 
-        btnSiguiente.addActionListener(e -> {
-            String nombre = txtNombre.getText().trim();
-            if (nombre.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Debes escribir un nombre.");
-            } else {
-                new Principal(this, nombre);
-                setVisible(false);
-            }
-        });
+            panelBotones.add(btnSiguiente);
+            panelBotones.add(btnSalir);
+            fondo.add(panelBotones);
 
-        setVisible(true);
-    }
+            setVisible(true);
+        }
+    
 }
