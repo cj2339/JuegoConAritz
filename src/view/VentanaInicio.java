@@ -11,6 +11,8 @@ public class VentanaInicio extends JFrame implements ActionListener {
     private JTextField txtNombre;
     private JButton btnSiguiente;
     private JButton btnSalir;
+    private JLabel lblTitulo;
+    private JLabel lblNombre;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -33,11 +35,11 @@ public class VentanaInicio extends JFrame implements ActionListener {
         contentPane.setLayout(null);
         setContentPane(contentPane);
 
-        JLabel lblTitulo = new JLabel("Bienvenido al Test de Fútbol");
+        lblTitulo = new JLabel("Bienvenido al Test de Fútbol");
         lblTitulo.setBounds(120, 20, 250, 20);
         contentPane.add(lblTitulo);
 
-        JLabel lblNombre = new JLabel("Introduce tu nombre:");
+        lblNombre = new JLabel("Introduce tu nombre:");
         lblNombre.setBounds(50, 80, 150, 20);
         contentPane.add(lblNombre);
 
@@ -58,18 +60,20 @@ public class VentanaInicio extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         Object o = e.getSource();
+        String nombre;
+        VentanaPregunta1 v1;
 
         if (o == btnSalir) {
             System.exit(0);
         }
 
         if (o == btnSiguiente) {
-            String nombre = txtNombre.getText();
+            nombre = txtNombre.getText();
 
             if (nombre.equals("")) {
                 JOptionPane.showMessageDialog(this, "Debes escribir un nombre.");
             } else {
-                VentanaPregunta1 v1 = new VentanaPregunta1(nombre);
+                v1 = new VentanaPregunta1(nombre);
                 v1.setVisible(true);
                 dispose();
             }
