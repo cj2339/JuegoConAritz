@@ -11,6 +11,8 @@ public class VentanaPregunta1 extends JFrame implements ActionListener {
     private JButton btnSiguiente;
     private ButtonGroup grupo;
     private String nombre;
+    private VentanaPregunta2 v2;
+    private JLabel lblPregunta;
 
     public VentanaPregunta1(String nombre) {
         this.nombre = nombre;
@@ -22,7 +24,7 @@ public class VentanaPregunta1 extends JFrame implements ActionListener {
         contentPane.setLayout(null);
         setContentPane(contentPane);
 
-        JLabel lblPregunta = new JLabel("1. ¿Quién tiene más Balones de Oro?");
+        lblPregunta = new JLabel("1. ¿Quién tiene más Balones de Oro?");
         lblPregunta.setBounds(100, 20, 300, 20);
         contentPane.add(lblPregunta);
 
@@ -56,7 +58,7 @@ public class VentanaPregunta1 extends JFrame implements ActionListener {
             aciertos = 1;
         }
 
-        VentanaPregunta2 v2 = new VentanaPregunta2(nombre, aciertos);
+        v2 = new VentanaPregunta2(nombre, aciertos);
         v2.setVisible(true);
         dispose();
     }

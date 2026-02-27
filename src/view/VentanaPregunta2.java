@@ -11,6 +11,8 @@ public class VentanaPregunta2 extends JFrame implements ActionListener {
     private JButton btnSiguiente;
     private String nombre;
     private int aciertosPrevios;
+    private JLabel lblPregunta;
+    
 
     public VentanaPregunta2(String nombre, int aciertosPrevios) {
         this.nombre = nombre;
@@ -23,7 +25,7 @@ public class VentanaPregunta2 extends JFrame implements ActionListener {
         contentPane.setLayout(null);
         setContentPane(contentPane);
 
-        JLabel lblPregunta = new JLabel("2. El estadio del Athletic Club es:");
+        lblPregunta = new JLabel("2. El estadio del Athletic Club es:");
         lblPregunta.setBounds(100, 40, 300, 20);
         contentPane.add(lblPregunta);
 
@@ -39,12 +41,12 @@ public class VentanaPregunta2 extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         int aciertos = aciertosPrevios;
-
+        VentanaPregunta3 v3;
         if (txtEstadio.getText().equalsIgnoreCase("San Mamés")) {
             aciertos++;
         }
 
-        VentanaPregunta3 v3 = new VentanaPregunta3(nombre, aciertos);
+        v3 = new VentanaPregunta3(nombre, aciertos);
         v3.setVisible(true);
         dispose();
     }

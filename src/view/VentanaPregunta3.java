@@ -11,6 +11,7 @@ public class VentanaPregunta3 extends JFrame implements ActionListener {
     private JButton btnFinalizar;
     private String nombre;
     private int aciertosPrevios;
+    private JLabel lblPregunta;
 
     public VentanaPregunta3(String nombre, int aciertosPrevios) {
         this.nombre = nombre;
@@ -23,7 +24,7 @@ public class VentanaPregunta3 extends JFrame implements ActionListener {
         contentPane.setLayout(null);
         setContentPane(contentPane);
 
-        JLabel lblPregunta = new JLabel("3. ¿Cuáles son equipos históricos?");
+        lblPregunta = new JLabel("3. ¿Cuáles son equipos históricos?");
         lblPregunta.setBounds(100, 20, 300, 20);
         contentPane.add(lblPregunta);
 
@@ -47,12 +48,13 @@ public class VentanaPregunta3 extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         int aciertos = aciertosPrevios;
-
+        VentanaResultado vr;
+        	
         if (cb1.isSelected() && cb3.isSelected() && !cb2.isSelected()) {
             aciertos++;
         }
 
-        VentanaResultado vr = new VentanaResultado(nombre, aciertos);
+        vr = new VentanaResultado(nombre, aciertos);
         vr.setVisible(true);
         dispose();
     }
