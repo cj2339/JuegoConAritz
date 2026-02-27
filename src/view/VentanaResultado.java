@@ -1,49 +1,53 @@
 package view;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.*;
 
-public class VentanaResultado extends JDialog {
+public class VentanaResultado extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
+    private JButton btnRepetir, btnSalir;
 
-    public VentanaResultado(JDialog parent, String nombre, int aciertos) {
-        super(parent, "Resultados del Test", true);
+    public VentanaResultado(String nombre, int aciertos) {
 
-        setSize(350, 250);
-        setLocationRelativeTo(parent);
-        setLayout(new GridLayout(4, 1));
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 450, 250);
 
-        add(new JLabel("¡Buen partido, " + nombre + "!", SwingConstants.CENTER));
-        add(new JLabel("Has acertado " + aciertos + " de 3 preguntas.", SwingConstants.CENTER));
+        contentPane = new JPanel();
+        contentPane.setLayout(null);
+        setContentPane(contentPane);
 
-        JLabel imagen = new JLabel("", SwingConstants.CENTER);
+        JLabel lblSaludo = new JLabel("¡Buen partido, " + nombre + "!");
+        lblSaludo.setBounds(130, 40, 250, 20);
+        contentPane.add(lblSaludo);
 
-        if (aciertos == 3) {
-            imagen.setText("🏆 ¡Crack total! Nivel Champions.");
-        } else if (aciertos == 2) {
-            imagen.setText("⚽ ¡Muy bien! Nivel Europa League.");
-        } else {
-            imagen.setText("🥲 Toca entrenar un poco más...");
+        JLabel lblAciertos = new JLabel("Has acertado " + aciertos + " de 3 preguntas.");
+        lblAciertos.setBounds(130, 80, 250, 20);
+        contentPane.add(lblAciertos);
+
+        btnRepetir = new JButton("Repetir");
+        btnRepetir.setBounds(100, 150, 100, 25);
+        btnRepetir.addActionListener(this);
+        contentPane.add(btnRepetir);
+
+        btnSalir = new JButton("Salir");
+        btnSalir.setBounds(250, 150, 100, 25);
+        btnSalir.addActionListener(this);
+        contentPane.add(btnSalir);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        Object o = e.getSource();
+
+        if (o == btnSalir) {
+            System.exit(0);
         }
 
-        add(imagen);
-
-        JPanel panelBotones = new JPanel();
-        JButton btnRepetir = new JButton("Repetir");
-        JButton btnSalir = new JButton("Salir");
-
-        panelBotones.add(btnRepetir);
-        panelBotones.add(btnSalir);
-        add(panelBotones);
-
-        btnRepetir.addActionListener(e -> {
-            new VentanaInicio();
+        if (o == btnRepetir) {
+            VentanaInicio v = new VentanaInicio();
+            v.setVisible(true);
             dispose();
-        });
-
-        btnSalir.addActionListener(e -> System.exit(0));
-
-        setVisible(true);
+        }
     }
 }
