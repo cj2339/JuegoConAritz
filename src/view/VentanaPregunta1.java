@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.awt.Toolkit;
 
 public class VentanaPregunta1 extends JFrame implements ActionListener {
 
@@ -15,6 +16,7 @@ public class VentanaPregunta1 extends JFrame implements ActionListener {
     private JLabel lblPregunta;
 
     public VentanaPregunta1(String nombre) {
+    	setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\ASUS\\git\\JuegoConAritz\\53283.png"));
         this.nombre = nombre;
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
