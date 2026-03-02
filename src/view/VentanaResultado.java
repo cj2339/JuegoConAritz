@@ -19,7 +19,7 @@ public class VentanaResultado extends JFrame implements ActionListener {
 	private JButton btnRepetir, btnSalir;
 	private JLabel lblSaludo;
 	private JLabel lblAciertos;
-	private Image imagenFondo = new ImageIcon("C:\\Users\\ASUS\\git\\JuegoConAritz\\FagPkikWQAEHGrQ.png").getImage();
+	private Image imagenFondo = new ImageIcon("C:\\Users\\ASUS\\git\\JuegoConAritz\\fotoFondo.png").getImage();
 
 	public VentanaResultado(String nombre, int aciertos) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\ASUS\\git\\JuegoConAritz\\53283.png"));
