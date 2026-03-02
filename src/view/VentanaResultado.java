@@ -38,11 +38,11 @@ public class VentanaResultado extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 
 		lblSaludo = new JLabel("¡Buen partido, " + nombre + "!");
-		lblSaludo.setBounds(130, 40, 250, 20);
+		lblSaludo.setBounds(148, 40, 250, 20);
 		contentPane.add(lblSaludo);
 
 		lblAciertos = new JLabel("Has acertado " + aciertos + " de 3 preguntas.");
-		lblAciertos.setBounds(130, 80, 250, 20);
+		lblAciertos.setBounds(148, 80, 250, 20);
 		contentPane.add(lblAciertos);
 
 		btnRepetir = new JButton("Repetir");
