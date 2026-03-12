@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Font;
 
 public class VentanaResultado extends JFrame implements ActionListener {
 
@@ -38,19 +40,25 @@ public class VentanaResultado extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 
 		lblSaludo = new JLabel("¡Buen partido, " + nombre + "!");
+		lblSaludo.setFont(new Font("Tahoma", Font.BOLD, 10));
+		lblSaludo.setBackground(new Color(255, 255, 255));
 		lblSaludo.setBounds(148, 40, 250, 20);
 		contentPane.add(lblSaludo);
 
 		lblAciertos = new JLabel("Has acertado " + aciertos + " de 3 preguntas.");
+		lblAciertos.setFont(new Font("Tahoma", Font.BOLD, 10));
+		lblAciertos.setBackground(new Color(255, 255, 255));
 		lblAciertos.setBounds(148, 80, 250, 20);
 		contentPane.add(lblAciertos);
 
 		btnRepetir = new JButton("Repetir");
+		btnRepetir.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnRepetir.setBounds(100, 150, 100, 25);
 		btnRepetir.addActionListener(this);
 		contentPane.add(btnRepetir);
 
 		btnSalir = new JButton("Salir");
+		btnSalir.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnSalir.setBounds(250, 150, 100, 25);
 		btnSalir.addActionListener(this);
 		contentPane.add(btnSalir);

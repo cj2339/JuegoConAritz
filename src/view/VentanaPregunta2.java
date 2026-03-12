@@ -3,6 +3,8 @@ package view;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.Toolkit;
+import java.awt.Color;
+import java.awt.Font;
 
 public class VentanaPregunta2 extends JFrame implements ActionListener {
 
@@ -24,11 +26,14 @@ public class VentanaPregunta2 extends JFrame implements ActionListener {
         setBounds(100, 100, 450, 250);
 
         contentPane = new JPanel();
+        contentPane.setBackground(new Color(0, 128, 0));
         contentPane.setLayout(null);
         setContentPane(contentPane);
 
         lblPregunta = new JLabel("2. El estadio del Athletic Club es:");
-        lblPregunta.setBounds(100, 40, 300, 20);
+        lblPregunta.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lblPregunta.setBackground(new Color(255, 255, 255));
+        lblPregunta.setBounds(93, 40, 300, 20);
         contentPane.add(lblPregunta);
 
         txtEstadio = new JTextField();
@@ -36,6 +41,7 @@ public class VentanaPregunta2 extends JFrame implements ActionListener {
         contentPane.add(txtEstadio);
 
         btnSiguiente = new JButton("Siguiente");
+        btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 10));
         btnSiguiente.setBounds(300, 150, 100, 25);
         btnSiguiente.addActionListener(this);
         contentPane.add(btnSiguiente);
