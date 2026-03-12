@@ -31,7 +31,7 @@ public class VentanaInicio extends JFrame implements ActionListener {
 	}
 
 	public VentanaInicio() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\ASUS\\git\\JuegoConAritz\\53283.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("53283.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 250);
 

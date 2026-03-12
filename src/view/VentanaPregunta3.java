@@ -17,7 +17,7 @@ public class VentanaPregunta3 extends JFrame implements ActionListener {
     private JLabel lblPregunta;
 
     public VentanaPregunta3(String nombre, int aciertosPrevios) {
-    	setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\ASUS\\git\\JuegoConAritz\\53283.png"));
+    	setIconImage(Toolkit.getDefaultToolkit().getImage("53283.png"));
         this.nombre = nombre;
         this.aciertosPrevios = aciertosPrevios;
 

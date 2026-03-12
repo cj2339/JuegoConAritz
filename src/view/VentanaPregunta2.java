@@ -18,7 +18,7 @@ public class VentanaPregunta2 extends JFrame implements ActionListener {
     
 
     public VentanaPregunta2(String nombre, int aciertosPrevios) {
-    	setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\ASUS\\git\\JuegoConAritz\\53283.png"));
+    	setIconImage(Toolkit.getDefaultToolkit().getImage("53283.png"));
         this.nombre = nombre;
         this.aciertosPrevios = aciertosPrevios;
 

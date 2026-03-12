@@ -18,7 +18,7 @@ public class VentanaPregunta1 extends JFrame implements ActionListener {
     private JLabel lblPregunta;
 
     public VentanaPregunta1(String nombre) {
-    	setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\ASUS\\git\\JuegoConAritz\\53283.png"));
+    	setIconImage(Toolkit.getDefaultToolkit().getImage("53283.png"));
         this.nombre = nombre;
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
